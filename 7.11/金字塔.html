@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>金字塔</title>
+</head>
+
+<body style="margin:0 auto;width:1000px;">
+
+	<body style="margin:0 auto;width:1000px;">
+		<h2>一、金字塔</h2>
+		<h4>1、演示</h4>
+		<script type="text/javascript">
+var cols = 10
+	for (var i = 0; i < cols; i++) {
+		for (var j = 0; j < i; j++) {
+			document.write('☆')
+		};
+		for (var k = 2*cols; k >2*i; k--) {
+			document.write('<font color=green>☀</font>')
+		};
+		for (var k = 0; k < 2*i; k++) {
+			if(2*i-k == 1){
+			document.write('<font color=red >☆</font>')
+		}
+			else
+				if(  k-cols>0 && i>cols/2){
+				document.write('<font color=#999 >★</font>')
+				}
+
+			else if(k >= i){
+			document.write('<font color=yellow >★</font>')
+			}else{
+			document.write('<font color=#70380A >☆</font>')
+			}
+		};
+		document.write('<br>')
+	};
+		</script>
+
+		<h4>2、代码</h4>
+		<xmp style="background:#eee">
+			<script type="text/javascript">
+				var cols = 10
+				for (var i = 0; i < cols; i++) {
+					for (var j = 0; j < i; j++) {
+						document.write('☆')
+					};
+					for (var k = 2 * cols; k > 2 * i; k--) {
+						document.write('<font color=green>☀</font>')
+					};
+					for (var k = 0; k < 2 * i; k++) {
+						if (2 * i - k == 1) {
+							document.write('<font color=red >☆</font>')
+						}
+						else
+							if (k < (2 * k + cols) / 4 && i > cols / 2) {
+								document.write('<font color=#999 >★</font>')
+							}
+
+							else if (k >= i) {
+								document.write('<font color=yellow >★</font>')
+							} else {
+								document.write('<font color=#70380A >☆</font>')
+							}
+					};
+					document.write('<br>')
+				};
+			</script>
+		</xmp>
+
+		<!-- /*导入一个外部菜单*/ -->
+		<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+			style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+	</body>
+
+</html>

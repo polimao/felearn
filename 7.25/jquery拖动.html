@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box {
+			margin: 200px;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: url(../images/2.jpg) bottom right;
+		}
+	</style>
+</head>
+
+<body>
+	<script type="text/javascript" src='jquery-1.7.2.min.js'></script>
+	<script type="text/javascript">
+
+		$(function () {
+			$('#box').mousedown(function (ev) {
+				var m_old_left = ev.pageX;
+				var m_old_top = ev.pageY;
+				var box_old_left = $('#box').position().left;
+				var box_old_top = $('#box').position().top;
+				// alert(box_old_top)
+				$(document).mousemove(function (ev) {
+					var m_new_left = ev.pageX;
+					var m_new_top = ev.pageY;
+					var diff_left = m_new_left - m_old_left
+					var diff_top = m_new_top - m_old_top
+					var box_new_left = box_old_left + diff_left
+					var box_new_top = box_old_top + diff_top
+					$('#box').css({ 'left': box_new_left + 'px', 'top': box_new_top + 'px' })
+					// alert(1)
+				})
+			});
+			$('#box').mouseup(function () {
+				$(document).off('mousemove')
+			});
+		})
+
+	</script>
+
+	<div id="box"></div>
+
+
+
+	<!-- /*导入一个外部菜单*/ -->
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+
+
+</body>
+
+</html>

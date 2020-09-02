@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>jd轮播图</title>
+	<style type="text/css">
+	#box-out{
+		width: 608px;
+		height: 159px;
+		position: relative;
+		border: 2px solid #000;
+		overflow: hidden;
+	}
+	#box{
+		width: 1824px;
+		height: 159px;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+		.kuai1,.kuai2,.kuai3{
+			width: 608px;
+			height: 159px;
+			background: #6AC62E;
+			float: left;
+			}		
+		.kuai2{
+			background: #E6BF4D;
+		}
+		.kuai3{
+			background: #F9263E;
+		}
+		a#prev,a#next{
+			width: 30px;
+			height: 159px;
+			position: absolute;
+			display: block;
+			background: #f5f5f5;
+			line-height: 159px;
+			text-align: center;
+			text-decoration: none;
+			font-weight: 700;
+			color: #333;
+		}
+		a#prev{
+			left: 0;
+			top: 0;
+		}
+		a#next{
+			right: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+	
+$(function (){
+	var c = 1
+	$('#prev').click(function(){
+		$('#box').animate({
+			left: -c*608},
+			300, function() {
+				c = (c==2)?0:(c+1);
+				// alert(c)
+		});
+	})
+	$('#next').click(function(){
+		$('#box').animate({
+			left: -c*608},
+			300, function() {
+				c = (c==0)?2:(c-1);
+				// alert(c)
+		});
+	})
+})
+
+
+</script>
+<div id="box-out">
+	<div id="box">
+		<div class="kuai1"></div>
+		<div class="kuai2"></div>
+		<div class="kuai3"></div>
+	</div>
+	<a href="##" id="prev"><span>←</span></a>
+	<a href="##" id="next"><span>→</span></a>
+</div>
+
+</body>
+</html>

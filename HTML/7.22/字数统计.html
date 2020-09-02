@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>新浪发微博还剩多少字</title>
+	<style type="text/css">
+		body {
+			margin: 0 auto;
+			width: 1000px;
+			position: relative;
+			background: #00676B;
+		}
+
+		#weibo {
+			border-radius: 50%;
+			border-width: 10px;
+			padding: 60px;
+			background: #EDE5CE;
+			border-color: #DF0029;
+			color: #000;
+			font-size: 18px;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		p {
+			position: absolute;
+			left: 350px;
+			top: 75px;
+			color: #fff;
+
+		}
+
+		span {
+			font-size: 60px;
+			font-weight: 700;
+			font-family: Constantia, Georgia;
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<!-- 这里实时抓取textarea里面的内容  但是用innerHTML抓不到 -->
+	<!-- 用value正常/ -->
+	<h1>新浪微博还剩多少字效果</h1>
+	<h3>1、演示</h3>
+	<p><span id="num">140</span></p>
+	<textarea id="weibo" cols="30" rows="10"></textarea>
+
+	<script type="text/javascript">
+
+	function run(){
+		var weibo = document.getElementById('weibo')
+		var len = weibo.value.length
+		var num = document.getElementById('num')
+		if(len>140){
+			num.innerHTML = '超出'+(len-140)
+			num.style.color = '#F92665'
+		}else{
+			num.innerHTML = 140-len
+			num.style.color = '#Fff'
+		}
+		if (num.innerHTML!=140) {
+			num.style.display='block'
+		};
+	}
+	setInterval(run,100)
+	</script>
+	<h3>2、代码</h3>
+	<xmp style="background:#999;">
+		<p><span id="num">140</span></p>
+		<textarea id="weibo" cols="30" rows="10"></textarea>
+
+		<script type="text/javascript">
+
+			function run() {
+				var weibo = document.getElementById('weibo')
+				var len = weibo.value.length
+				var num = document.getElementById('num')
+				if (len > 140) {
+					num.innerHTML = '超出' + (len - 140)
+					num.style.color = '#F92665'
+				} else {
+					num.innerHTML = 140 - len
+					num.style.color = '#Fff'
+				}
+				if (num.innerHTML != 140) {
+					num.style.display = 'block'
+				};
+			}
+			setInterval(run, 100)
+		</script>
+	</xmp>
+
+
+	<!-- /*导入一个外部菜单*/ -->
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+</body>
+
+</html>

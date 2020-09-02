@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>知识点</title>
+</head>
+<body>
+<style type="text/css">
+	.box{width: 300px;height: 220px;background: #999;}
+	.box:hover{cursor:pointer;}/*手型*/
+	.box{opacity: 0.5;}/*透明*/
+	.box{visibility: hidden;}/*元素隐藏 位置还在*/
+	.box{visibility: visible;}/*元素显示*/
+	/*ie9以下写法：filter：alpha（opacity=50）；*/
+	.box{background: blue\9} 所有浏览器
+	.box{background: green\0} ie8、9认
+	+.box:hover{cursor:hand;}ie67认
+	_.box:hover{cursor:hand;}ie6认
+	:root #hd{background: yellow\9} css3的选择器。再加上、9 能单独控制ie9
+</style>
+	<div class="box">
+		BOX
+
+	</div>
+	怎么写一个优质的div+css页面
+	1、首先你要相信一点，不用所谓的hack技术一样可以写出来浏览器全兼容的页面。调整网页兼容性并不一定非得用hack技术，有时候需要的仅仅是把代码写的更严谨一些。当然，这需要开发者一定的技术和经验积累。
+	2、margin属性容易在低版本的ie中出现兼容性问题，尽量少用。可以选用padding或position方式代替。
+	3、在宽高固定。子元素比较多、子元素位置杂乱，子元素
+	4、能设置狂傲的区块，尽量写上宽高。
+	5、需要设置背景图的元素尽量设置具体的宽高。
+	6、用常见的标签和css属性、尽量别用另类的用法.
+	7、不要用行级标签（a标签、span标签等）和文字标签（p标签等）当做划分区域的标签。
+	8、尽量不要在行级标签内嵌套块级标签。
+	9、了解自己写的每一个标签，每个标签的大小范围、属性、潜逃层级都要清楚才行，其实就是深入理解盒子模型。
+	10、深化区块的概念，把页面严格的分成不同的区块，尽量避免不同区块之间的冲突。
+
+
+	11、写页面的时候写一点就测一下兼容性，发现问题及时改正，不要想着等到全写完后统一调试兼容 性。
+	12、前端开发最忌讳直接参考别人的标签和写法，一定要有自己的开发思路，不要怕麻烦，一旦被别人的思路绑架，你会很痛苦。
+	13、一般来说，开发两个凡客。京东规模的页面就算入门了，开发五个以上就能体会到一定的开发技巧。开发的页面数量越多
+</body>
+</html>

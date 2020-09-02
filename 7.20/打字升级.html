@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>打字游戏</title>
+</head>
+
+<body>
+	<!-- 	1、字母挨个落下
+	2、敲击键盘倒中掉下的字母
+	3、打中的消失
+	4、加速度 -->
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0
+		}
+
+		li {
+			list-style: none;
+			font-size: 190px;
+			font-family: 微软雅黑;
+			font-weight: 700;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+	</style>
+	<ul>
+		<li>A</li>
+		<li>B</li>
+		<li>C</li>
+		<li>D</li>
+		<li>E</li>
+		<li>F</li>
+	</ul>
+	<script type="text/javascript">
+
+	window.onload = function(){
+		var li = document.getElementsByTagName('li')
+
+		var client_width = document.documentElement.clientWidth
+		var client_height = document.documentElement.clientHeight
+
+		var i = 0
+		function adr(){
+				var ranX = Math.floor(Math.random()*(client_width/10+1))//获取可视区域宽度的随机数
+				li[i].style.left = ranX*10+'px'
+				var ranY = Math.floor(Math.random()*(client_height+1))//获取可视区域宽度的随机数
+				li[i].style.top = (ranY*-1)+'px'
+				i++
+				i==6?clearInterval(timer):i
+		}
+
+		var timer = setInterval(adr,1000)
+		
+		var n = 3
+			function run(){
+				for (var j = 0; j < 6; j++) {
+
+				li[j].style.top = parseInt(li[j].style.top)+n+'px'
+			}
+		}
+		setInterval(run,100)
+
+
+
+	}
+
+
+	</script>
+
+
+
+	<!-- /*导入一个外部菜单*/ -->
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+</body>
+
+</html>

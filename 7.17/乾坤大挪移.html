@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>乾坤大挪移</title>
+	<style type="text/css">
+		body {
+			width: 770px;
+			margin: 0 auto;
+		}
+
+		li {
+			width: 100px;
+			height: 100px;
+			border: 1px solid #333;
+			border-radius: 50%;
+			list-style: none;
+			float: left;
+			text-align: center;
+			line-height: 100px;
+
+		}
+
+		input {}
+	</style>
+</head>
+
+<body>
+	<input type="button" value="移动" id="btn">
+	<ul>
+		<li id="li1" style="width:100px;">■</li>
+		<li id="li2"></li>
+		<li id="li3"></li>
+		<li id="li4"></li>
+		<li id="li5"></li>
+		<li id="li6"></li>
+		<li id="li7"></li>
+		<li id="li8"></li>
+		<li id="li9"></li>
+		<li id="li10"></li>
+		<li id="li11"></li>
+		<li id="li12"></li>
+		<li id="li13"></li>
+		<li id="li14"></li>
+		<li id="li15"></li>
+		<li id="li16"></li>
+		<li id="li17"></li>
+		<li id="li18"></li>
+		<li id="li19"></li>
+		<li id="li20"></li>
+		<li id="li21"></li>
+	</ul>
+
+	<script type="text/javascript">
+window.onload = function(){
+
+	var li1 = document.getElementById('li1').innerHTML
+	var li2 = document.getElementById('li2').innerHTML
+	var li3 = document.getElementById('li3').innerHTML
+	var li4 = document.getElementById('li4').innerHTML
+	var li5 = document.getElementById('li5').innerHTML
+	var btn = document.getElementById('btn')
+	
+
+	btn.onclick=function(){          //按钮点击
+
+		for (var i = 1; i <= 21; i++) {        //查找第一个'■'
+
+			if (i == 21) {
+				document.getElementById('li'+i).innerHTML == ''
+				document.getElementById('li'+1).innerHTML == '■'
+			}else if(document.getElementById('li'+i).innerHTML == '■'){
+				// var i = k    //赋值给下一个循环的开始
+				if(document.getElementById('li'+(i+1)).innerHTML != document.getElementById('li'+i).innerHTML){
+					document.getElementById('li'+(i+1)).innerHTML = document.getElementById('li'+i).innerHTML
+					document.getElementById('li'+i).innerHTML = ''
+				}  
+				break
+			}
+		}
+
+
+
+		// for ( i; i < 21; i++) {    //
+		// 	if(document.getElementById('li'+(i+1)).innerHTML == document.getElementById('li'+i).innerHTML){
+		// 		continue;
+		// 	}else{
+		// 		document.getElementById('li'+(i+1)).innerHTML = document.getElementById('li'+i).innerHTML
+		// 		document.getElementById('li'+i).innerHTML = ''
+		// 	}
+		// 	break
+		// };
+
+	}
+
+
+}
+
+
+	</script>
+
+
+
+
+
+	<!-- /*导入一个外部菜单*/ -->
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+</body>
+
+</html>

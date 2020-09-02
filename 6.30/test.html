@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>路径</title>
+	<style type="text/css">
+		#ul1 .li1:hover li{
+			display: block;
+		}
+		.li1{
+			position: relative;
+			float: left;
+			list-style: none;
+		}
+		.ul2 li{
+			position: relative;
+			left: -40px;
+			display: none;
+		}
+		#ul1 li{
+			width:50px;
+		}
+	</style>
+</head>
+<body>
+路径
+	<img src="./1.jpg" alt="">代码所在当前目录
+	<img src="../1.jpg" alt="">向上一级找目录
+	<img src="1.jpg" alt="">代码所在当前目录
+	<img src="www.b.com/1.jpg" alt="">绝对地址
+	<img src="/1.jpg" alt="">网站根目录<br><br><br>
+列表
+<div>
+<ul id="ul1">
+	<li class="li1"><a href="">首页</a>
+		<ul class="ul2">
+			<li><a href="">首页1</a></li>
+			<li><a href="">首页2</a></li>
+			<li><a href="">首页3</a></li>
+		</ul>
+	</li>
+	<li class="li1">
+		新闻
+		<ul class="ul2">
+			<li>新闻1</li>
+			<li>新闻2</li>
+			<li>新闻3</li>
+		</ul>
+	</li>
+	<li class="li1">
+		社会
+		<ul class="ul2">
+			<li>社会1</li>
+			<li>社会2</li>
+			<li>社会3</li>
+		</ul>
+	</li>
+	<li class="li1"></li>
+	<li class="li1"></li>
+</ol>
+</div>
+<!-- <ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul> -->
+<!-- 自定义列表 -->
+<!-- <dl style="float:left;">
+	<dt></dt>
+	<dl></dl>
+	<dl></dl>
+	<dl></dl>
+</dl> -->
+<br><br><br><br><br><br>
+表格
+<!-- table>tr*3>td{后盾网}*3 -->
+table>tr{<!-- 您好 -->}*4>td{您好}*5
+div{<!-- 首页 -->}*5
+下 bottom
+垂直居中 middle
+<table border="1" valign="middle" align="center"width='80%'height="500">
+	<tr  height="100" bgcolor="green" >
+		<td width="200"></td>
+		<td>周一</td>
+		<td>周二</td>		
+		<td>周三</td>
+		<td>周四</td>		
+		<td>周五</td>
+	</tr>
+	<tr>
+		<td>第一节课</td>
+		<td rowspan="2">生物</td>
+		<td>英语</td>
+		<td>生物</td>
+		<td>英语</td>
+		<td>英语</td>
+	</tr>
+	<tr>
+		<td>第二节课</td>
+		<td>数学</td>
+		<td>生物</td>
+		<td>英语</td>
+		<td>生物</td>
+	</tr>
+	<tr>
+		<td>第三节课</td>
+		<td>生物</td>
+		<td>英语</td>
+		<td rowspan="2">生物</td>
+		<td>英语</td>
+		<td>英语</td>
+	</tr>
+	<tr>
+		<td>第四节课</td>
+		<td>语文</td>
+		<td>数学</td>
+		<td>英语</td>
+		<td>生物</td>
+	</tr>
+</table>
+表单
+单行多行文本框
+单选按钮
+复选按钮
+文件域
+隐藏域 比如拿班里面的6号电脑去给维修师傅 但这个6号 不需要给他知道
+下拉菜单
+提交按钮
+重置按钮
+
+<!-- 多选按钮 的name 必须在后面加【】
+默认选中 checked=‘chenked’
+select=‘select’
+下拉默认展示多个  用size=
+下拉 改成多选 multiple='multiple'  name必须得加【】
+<label></label>
+<label for="id"></label>
+ -->
+<form action="接收地址" method="发送方式">
+	<input type="text">
+	<input type="password">
+	<input type="radio">
+	<input type="checkbox">
+	<input type="hidden">
+	<input type="submit">
+	<input type="file">
+	<input type="reset">
+	<input type="button">
+	<textarea name="" id="" cols="30" rows="10">dasdf </textarea>
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+text password radio checkbox submit file hidden reset botton textarea select option
+
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>许愿墙</title>
+</head>
+
+<body>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#header {
+			background: url(Bg.jpg)repeat-x;
+		}
+
+		#header .logo {
+			width: 950px;
+			height: 113px;
+			margin: 0 auto;
+			background: url(logo.jpg) no-repeat;
+		}
+
+		#nav {
+			background: url(Bg_nav.gif)repeat-x;
+		}
+
+		#nav .main-nav {
+			width: 950px;
+			height: 68px;
+			margin: 0 auto;
+		}
+
+		#nav .main-nav .menu {
+			width: 280px;
+			height: 73px;
+			float: left;
+		}
+
+		#nav .main-nav .menu .menu1 {
+			width: 130px;
+			height: 45px;
+			float: left;
+			margin-top: 23px;
+		}
+
+		#nav .main-nav .menu .menu2 {
+			width: 130px;
+			height: 45px;
+			float: left;
+			margin-top: 23px;
+		}
+
+		#nav .main-nav .now {
+			width: 139px;
+			height: 83px;
+			float: left;
+			margin-left: 10px;
+			color: #fff;
+			font-size: 18px;
+			font-weight: 400;
+			font-family: 微软雅黑;
+			line-height: 83px;
+		}
+
+		#nav .main-nav .search {
+			width: 307px;
+			height: 26px;
+			float: right;
+			padding-top: 30px;
+		}
+
+		#nav .main-nav .search span {
+			display: block;
+			width: 80px;
+			height: 24px;
+			font-size: 16px;
+			font-weight: bold;
+			color: #fff;
+			font-family: 微软雅黑;
+			float: left;
+		}
+
+		#nav .main-nav .search .text-input {
+			width: 150px;
+			height: 20px;
+			padding: 2px 2px 2px 5px;
+			float: left;
+		}
+
+		#nav .main-nav .search .sub-input {
+			width: 57px;
+			height: 25px;
+			margin-left: 7px;
+			float: left;
+			background: url(sub.gif)no-repeat;
+			list-style: none;
+			line-height: 21px;
+			font-family: tahoma, ​arial, ​宋体, ​sans-serif;
+			border: none;
+		}
+
+		/*一个愿望*/
+		#wrapper {
+			background: url(Bg1.jpg)repeat-x;
+			width: 100%;
+			height: 683px;
+		}
+
+		#wrapper .column {
+			width: 240px;
+			height: 186px;
+			background: url(face1.png)no-repeat;
+			position: absolute;
+			left: 0px;
+			right: 0px;
+			font: 12px/1.5 tahoma, arial, 宋体, sans-serif;
+			float: left;
+		}
+
+		#wrapper .column a {
+			display: block;
+			width: 11px;
+			height: 11px;
+			position: absolute;
+			right: 12px;
+			top: -5px;
+		}
+
+		#wrapper .column .idress {
+			width: 150px;
+			height: 18px;
+			margin-left: 20px;
+		}
+
+		#wrapper .column p.content {
+			width: 210px;
+			height: 100px;
+			margin-left: 20px;
+			margin-bottom: 3px;
+			margin-top: 20px;
+		}
+
+		#wrapper .column p.content img {
+			width: 56px;
+			height: 56px;
+			padding-right: 10px;
+			float: left;
+		}
+
+		#wrapper .column .title {
+			display: block;
+			float: left;
+			color: #009900;
+		}
+
+		#wrapper .column p.name {
+			display: block;
+			position: absolute;
+			top: 130px;
+			right: 10px;
+			color: #009900;
+		}
+
+		#wrapper .column p.date {
+			display: block;
+			position: absolute;
+			top: 150px;
+			right: 5px;
+		}
+
+		/*一个愿望结束*/
+
+		#footer {
+			width: 100%;
+			height: 180px;
+			margin-top: 40px;
+		}
+
+		#footer .main-footer {
+			width: 950px;
+			color: #666;
+			margin: 0 auto;
+			margin-top: 40px;
+		}
+
+		#footer .main-footer ul {
+			text-align: center;
+			font-family: tahoma, ​arial, ​宋体, ​sans-serif;
+			line-height: 22px;
+			font-size: 12px;
+			list-style: none;
+		}
+
+		#footer .main-footer ul .sub-menu a {
+			color: #307EB9;
+			margin: 5px;
+		}
+
+		#footer .main-footer ul .sub-menu a:hover {
+			color: #CC0000;
+		}
+
+		#footer .main-footer ul .link1 {
+			display: inline-block;
+			width: 61px;
+			height: 78px;
+			background: url(szgs.gif)no-repeat;
+			text-align: center;
+		}
+
+		#footer .main-footer ul .link2 {
+			display: inline-block;
+			width: 83px;
+			height: 78px;
+			background: url(sm.png)no-repeat 0px 48px;
+			text-align: center;
+			text-decoration: none;
+		}
+	</style>
+	<script type="text/javascript" src='../other/jquery-1.7.2.min.js'></script>
+	<script type="text/javascript">
+
+		$(function () {
+			$('.column').mousedown(function(ev) {
+				var m_old_left = ev.pageX;
+				var m_old_top = ev.pageY;
+				var box_old_left = $(this).position().left;
+				var box_old_top = $(this).position().top;
+				// alert(box_old_top)
+				$(document).mousemove(function(ev){
+					var m_new_left = ev.pageX;
+					var m_new_top = ev.pageY;
+					var diff_left = m_new_left - m_old_left
+					var diff_top = m_new_top - m_old_top
+					var box_new_left = box_old_left + diff_left
+					var box_new_top = box_old_top +diff_top
+					$(this).css({'left':box_new_left+'px','top':box_new_top+'px'})
+				// alert(1)
+				})
+			});
+			$('.column').mouseup(function() {
+				$(document).off('mousemove')
+			});
+		})
+
+	</script>
+	<div id="header">
+		<div class="logo"></div>
+	</div>
+	<div id="nav">
+		<div class="main-nav">
+			<div class="menu">
+				<div class="menu1"><a href=""><img src="bt_11.jpg" alt=""></a></div>
+				<div class="menu2"><a href=""><img src="bt_12.jpg" alt=""></a></div>
+			</div>
+			<div class="now">已有心愿 <strong>5</strong> 条 !</div>
+			<div class="search">
+				<span>字条搜索 :</span>
+				<input type="text" class="text-input">
+				<input type="submit" class="sub-input" value="搜索">
+			</div>
+		</div>
+	</div>
+	<div id="wrapper">
+		<!-- 一个愿望 -->
+		<div class="column">
+			<a href="">
+				<img src="close.gif" alt=""></a>
+			<div class="idress">字条编号：1000003</div>
+			<p class="content">
+				<img src="icon7.gif" alt="">
+				<span class="title">自己</span>
+				<br>希望我可以在期末考试考出好的成绩，拿着三好学生的奖状回家开心过年。上帝保佑，文殊菩萨保佑。</p>
+			<p class="name">王茀豪</p>
+			<p class="date">2014-1-10 20:52:06</p>
+		</div>
+		<div class="column">
+			<a href="">
+				<img src="close.gif" alt=""></a>
+			<div class="idress">字条编号：1000003</div>
+			<p class="content">
+				<img src="icon7.gif" alt="">
+				<span class="title">自己</span>
+				<br>希望我可以在期末考试考出好的成绩，拿着三好学生的奖状回家开心过年。上帝保佑，文殊菩萨保佑。</p>
+			<p class="name">王茀豪</p>
+			<p class="date">2014-1-10 20:52:06</p>
+		</div>
+		<div class="column">
+			<a href="">
+				<img src="close.gif" alt=""></a>
+			<div class="idress">字条编号：1000003</div>
+			<p class="content">
+				<img src="icon7.gif" alt="">
+				<span class="title">自己</span>
+				<br>希望我可以在期末考试考出好的成绩，拿着三好学生的奖状回家开心过年。上帝保佑，文殊菩萨保佑。</p>
+			<p class="name">王茀豪</p>
+			<p class="date">2014-1-10 20:52:06</p>
+		</div>
+		<div class="column">
+			<a href="">
+				<img src="close.gif" alt=""></a>
+			<div class="idress">字条编号：1000003</div>
+			<p class="content">
+				<img src="icon7.gif" alt="">
+				<span class="title">自己</span>
+				<br>希望我可以在期末考试考出好的成绩，拿着三好学生的奖状回家开心过年。上帝保佑，文殊菩萨保佑。</p>
+			<p class="name">王茀豪</p>
+			<p class="date">2014-1-10 20:52:06</p>
+		</div>
+		<div class="column">
+			<a href="">
+				<img src="close.gif" alt=""></a>
+			<div class="idress">字条编号：1000003</div>
+			<p class="content">
+				<img src="icon7.gif" alt="">
+				<span class="title">自己</span>
+				<br>希望我可以在期末考试考出好的成绩，拿着三好学生的奖状回家开心过年。上帝保佑，文殊菩萨保佑。</p>
+			<p class="name">王茀豪</p>
+			<p class="date">2014-1-10 20:52:06</p>
+		</div>
+	</div>
+	<!-- 一个愿望结束 -->
+	<div class="column"></div>
+	<div class="column"></div>
+	<div class="column"></div>
+
+	</div>
+
+	<div id="footer">
+		<div class="main-footer">
+			<ul>
+				<li class="sub-menu">
+					<a href="">设为首页</a>
+					- <a href="">加入收藏</a>
+					- <a href="">关于我们</a>
+					- <a href="">联系我们</a>
+					- <a href="">招聘信息</a>
+					- <a href="">服务条款</a>
+					- <a href="">广告服务</a>
+					- <a href="">诚信保障</a>
+					- <a href="">保护隐私权</a>
+					- <a href="">免责声明</a>
+				</li>
+				<li>
+					Copyright @ 2005-2013 wjshw.com All Right Reserved Powered by
+					<a href="#" style="color:#666;text-decoration:none;">吴江生活网</a>
+					版权所有
+				</li>
+				<li>
+					吴江生活网不良信息举报电话：0512-63971181 举报邮箱：
+					<a href="#" style="color:#666;text-decoration:none;">service@wjshw.com</a>
+				</li>
+				<li>
+					网站备案：
+					<a href="#" style="color:#666;text-decoration:none;">苏ICP备06011935号</a><br>
+					<span class="link1">&nbsp;</span><!-- <a href="" class="link2">&nbsp;</a> -->
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+
+	<!-- /*导入一个外部菜单*/ -->
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+
+
+</body>
+
+</html>

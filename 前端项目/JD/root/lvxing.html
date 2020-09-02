@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+			$('#wrap ul li').mouseenter(function(){
+			$(this).css({'color':'#E4393C','border-bottom':'1px solid #E4393C'}).siblings().css({'color':'#005EAB','border':'none'})
+		});
+	})
+
+
+
+	</script>	
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	/*body{background: #333;}*/
+	#wrap{
+		width: 307px;
+		height: 136px;
+		/*padding: 15px 0 0 10px;*/
+		background: #fff;
+		font-size: 12px;
+	}
+	#wrap ul{
+		width: 290px;
+		height: 28px;
+		border-bottom: 1px solid #eee;
+	}
+	#wrap ul li{
+		float: left;
+		list-style: none;
+		line-height: 28px;
+		margin: 0 10px;
+		color: #005EAB;
+		font-size: 12px;
+		cursor: pointer;
+	}
+	#wrap .con{
+		width: 308px;
+		height: 108px;
+	}
+	#wrap .con p{
+		height: 32px;
+		line-height: 32px;
+		text-indent: 10px;
+	}
+	#wrap .con a{
+		width: 60px;
+		height: 20px;
+		line-height: 20px;
+		color:#fff;
+		text-decoration: none;
+		margin-left: 10px;
+		text-align: center;
+		border-radius: 3px;
+		display: block;
+		background: #E3393C;
+		float: left;
+	}
+	#wrap .con span{
+		display: block;
+		float: left;
+		color:#005EA7;
+		line-height: 22px;
+		text-indent: 10px;
+	}
+
+
+</style>
+
+</head>
+<body>
+	<div id='wrap'>
+			<ul>
+				<li>机票</li>
+				<li>酒店</li>
+				<li>旅游</li>
+				<li>彩票</li>
+				<li>签证</li>
+				<li>租车</li>
+			</ul>          
+		<div class="con">
+			<p>出发城市：<select name="" id=""><option value="">C-上海</option><option value=""></option></select>
+			到达城市：<select name="" id=""><option value="">C-上海</option><option value=""></option></select></p>
+
+			<p>出发日期： <select name="" id=""><option value="">2014</option><option value=""></option></select>年
+			<select name="" id=""><option value="">8</option><option value=""></option></select>月
+			<select name="" id=""><option value="">5</option><option value=""></option></select>日</p>
+			<a href="">机票查询</a><span>厦门香港往返290元起！</span>
+		</div>
+		<div class="con">
+			
+<p>入住城市：<select name="" id=""><option value="">B-北京</option><option value=""></option></select></p>
+<p>入住日期：<select name="" id=""><option value="">2014</option><option value=""></option></select>年
+<select name="" id=""><option value="">8</option><option value=""></option></select>月
+<select name="" id=""><option value="">5</option><option value=""></option></select>日</p>
+<p>离店日期：<select name="" id=""><option value="">2014</option><option value=""></option></select>年
+<select name="" id=""><option value="">8</option><option value=""></option></select>月
+<select name="" id=""><option value="">5</option><option value=""></option></select>日</p>
+<a href="">酒店查询</a><span>国际机票1折起！</span>
+
+		</div>
+		<div class="con">
+			
+
+    凯撒旅游官方旗舰店
+    蜜月海岛游
+
+
+		</div>
+		<div class="con">
+			搜索
+
+热门国家：
+    泰国 入台证 日本 美国 
+		</div>	
+		<div class="con">
+			
+
+    上海租车特惠
+    北京租车135元起
+
+
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+
+<body style="margin:0 auto;width:1000px;">
+	<h2>子元素最多的序号</h2>
+	<h4>1、演示</h4>
+	<script type="text/javascript">
+
+		var arr = [[1], [1], [1], [1], [2, 2], [3, 3, 3], [1], [4, 4, 4, 4, 4], [4, 4, 4, 4, 4]]
+
+		var max = 0  //最多数的元素的子元素数量
+		var xuhao = [] //最多数的元素的序号
+
+		for (var i = 0; i < arr.length; i++) {
+			if (max < arr[i].length) {
+				max = arr[i].length
+			}
+		};
+
+		for (var i = 0; i < arr.length; i++) {
+			if (max == arr[i].length) {
+				xuhao[xuhao.length] = i
+			}
+		};
+
+		document.write('数组arr=[')
+		var i = 0
+		while (i < arr.length) {
+
+			document.write('[' + arr[i] + ']')
+			i++
+		}
+
+		document.write(']<br>最多元素的一维数组中的元素数量是<h3>' + max + '</h3><br>')
+		document.write('最多元素的一维数组的序号是<h3>' + xuhao + '</h3><br>')
+	</script>
+	<h4>2、代码</h4>
+	<xmp style="background:#eee">
+		<script type="text/javascript">
+
+			var arr = [[1], [1], [1], [1], [2, 2], [3, 3, 3], [1], [4, 4, 4, 4, 4], [4, 4, 4, 4, 4]]
+
+			var max = 0  //最多数的元素的子元素数量
+			var xuhao = [] //最多数的元素的序号
+
+			for (var i = 0; i < arr.length; i++) {
+				if (max < arr[i].length) {
+					max = arr[i].length
+				}
+			};
+
+			for (var i = 0; i < arr.length; i++) {
+				if (max == arr[i].length) {
+					xuhao[xuhao.length] = i
+				}
+			};
+
+			document.write('数组arr=[')
+			var i = 0
+			while (i < arr.length) {
+
+				document.write('[' + arr[i] + ']')
+				i++
+			}
+
+			document.write(']<br>最多元素的一维数组中的元素数量是<h3>' + max + '</h3><br>')
+			document.write('最多元素的一维数组的序号是<h3>' + xuhao + '</h3><br>')
+		</script>
+	</xmp>
+
+
+	<!-- /*导入一个外部菜单*/ -->
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+</body>
+
+</html>

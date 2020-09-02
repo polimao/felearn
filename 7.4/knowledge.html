@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<style type="text/css">
+/*	
+	a{overflow: none; 溢出不显示
+		overflow: auto; 自动溢出
+		overflow: scroll;div  加滚动条
+		border: 2px red dotted;点
+		position: relative;
+		position: absolute;}*/
+	*{margin: 0;padding:0; }
+	
+	#box1{
+		width: 300px;
+		height: 200px;
+		background: green;
+		color: #fff;
+		font-size: 50px;
+
+	}
+	#box2{
+		width: 300px;
+		height: 200px;
+		background: red;
+		color: #fff;
+		font-size: 50px;
+		position: absolute;
+		left: 400px;
+
+	}
+	#box3{
+		width: 300px;
+		height: 200px;
+		background: blue;
+		color: #fff;
+		font-size: 50px;
+		line-height: 50px;
+		position: relative;
+		z-index: -2;
+		box-shadow: 2px;
+
+	}	
+	#wrap{
+		width: 500px;
+		height: 700px;
+		border: 3px #333 dashed ;
+		font-size: 50px;
+	}
+	body{
+		width: 1000px;
+		margin: 0 auto;
+	}
+</style>
+<!-- 相对定位 -->
+<!-- 1、元素的位置还保留着 -->
+<!-- 2、相对于元素原来的位置偏移 -->
+<!-- 3、右下是正方向 -->
+
+
+<!-- 绝对定位 -->
+<!-- 1、元素的位置消失 -->
+<!-- 2、相对于离他最近的 有定位属性的 父级元素定位 -->
+
+<!-- 1、只有有定位属性的元素才有层级概念 -->
+<!-- 2、有定位属性的元素 默认层级z-index都是0。比层级 关系到谁压着谁的问题； -->
+<!-- 3、只有兄弟元素 才能比层级 -->
+
+<!-- 
+1、文字宽度会影响定位选择边距
+2、为了让文字高度在各种浏览器上都能准确定位
+给文字line-height设置成文字的高度。 -->
+
+<!-- 北京精灵技术：在一个固定外框的div中显示某个大图的的某区域 -->
+<!-- shift+回车 在吉特盒子里搜索英文单词 -->
+
+作业：
+1、美团产品区块
+2、做一个许愿墙的页面
+3、凡客首页
+
+
+float BUG 如果子元素是float类型 那么就撑不开父级元素。给父级添加overflow
+
+
+<div id="wrap">wrap
+	<div id="box1">box1</div>
+	<div id="box2">box2</div>
+	<div id="box3">撒旦法色粉撒地方撒地方撒地方撒地方撒旦法色粉撒地方撒地方撒地方撒地方撒旦法色粉撒地方撒地方撒地方撒地方撒旦法色粉撒地方撒地方撒地方撒地方撒旦法色粉撒地方撒地方撒地方撒地方</div>
+</div>
+</body>
+</html>

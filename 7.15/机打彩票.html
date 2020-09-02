@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>机打彩票</title>
+</head>
+
+<body>
+	<style type="text/css">
+		body {
+			background: #999;
+			margin: 0 auto;
+			width: 1000px;
+		}
+
+		a {
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			border-radius: 50%;
+			background: #a10;
+			color: #fff;
+			display: block;
+			float: left;
+			margin-left: 20px;
+			text-decoration: none;
+			font-size: 30px;
+			font-weight: 700;
+		}
+
+		a:hover {
+			background: #e10;
+		}
+
+		a.hit {
+			background: #1C3594;
+			margin-left: 30px;
+		}
+
+		a.shua {
+			width: 150px;
+			border-radius: 5px;
+			background: #fff;
+			color: #000
+		}
+	</style>
+
+	<h2>机打彩票</h2>
+	<h3>1、演示</h3>
+	<p>----玩法说明<br>
+		双色球投注区分为红球号码区和蓝球号码区，红球号码范围为01～33，蓝球号码范围为01～16。双色球每期从33个红球中开出6个号码，从16个蓝球中开出1个号码作为中奖号码，双色球玩法即是竞猜开奖号码的6个红球号码和1个蓝球号码，顺序不限
+	</p>
+
+	<p>当数组长度定义为30时肯定会死，20以上有时死</p>
+	<script type="text/javascript">
+		var arr = [];
+		document.write(arr + '<br>')
+
+		while (arr.length < 6) {
+			var num = Math.floor(Math.random() * 34)
+			var str = arr.join('')
+			String(num)
+			if (!str.match(num)) {
+				arr.push(num)
+			}
+		};
+		for (var x in arr) {
+			document.write('<a href="#">' + arr[x] + '</a>')
+		}
+		num = Math.floor(Math.random() * 17)
+		document.write('<a href="#" class="hit">' + num + '</a>')
+	</script>
+	<a href="" class="shua">换一注</a>
+
+	<br><br><br><br><br>
+	<h3>2、代码(空数组+随机数循环->转换成字符串->判断不重复->转成数组)</h3>
+	<xmp style="background:#ccc;float:left;width:100%">
+
+		<script type="text/javascript">
+			var arr = [];
+			document.write(arr + '<br>')
+
+			while (arr.length < 6) {
+				var num = Math.floor(Math.random() * 34)
+				var str = arr.join('')
+				String(num)
+				if (!str.match(num)) {
+					arr.push(num)
+				}
+			};
+			for (var x in arr) {
+				document.write('<a href="#">' + arr[x] + '</a>')
+			}
+			num = Math.floor(Math.random() * 17)
+			document.write('<a href="#" class="hit">' + num + '</a>')
+		</script>
+		<a href="" class="shua">换一注</a>
+
+
+
+	</xmp>
+
+
+	<!-- /*导入一个外部菜单*/ -->
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+</body>
+
+</html>

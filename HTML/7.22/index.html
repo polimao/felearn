@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>正则表达式</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//用构造函数创建正则
+	// var reg = new RegExp('houdun')
+	// var str = 'www.houdunwang.co,'
+	// var r = reg.test(str)//符合正则要求
+	// alert(r)
+	//用字面量的形式创建正则
+	// var reg = /houdun/
+	// var str = 'www.houdun.com'
+	// var r = reg.test(str)//输出的是true和false
+	// alert(r)
+
+	// var reg = /后盾/g
+	// var str = '后盾网-后盾论坛-后盾php培训-后盾vip'
+	// var r = reg.exec(str)//返回的是匹配的内容
+	// alert(r)
+	// alert(r.index)//匹配到的位置
+	// if(r){
+	// 	document.write('<h1>匹配成功</h1>')
+	// }else{
+	// 	document.write('<h2>匹配失败</h2>')
+	// }
+	// //  /g 全局区配。每一次匹配exec后，下次从之后开始区配
+
+
+	// var reg = /\D\d/
+	// var str = 'houdunwang39'
+	// var r = reg.test(str)
+	// if(r){
+	// 	document.write('<h3>区配成功</h3>')
+	// }else{
+	// 	document.write('<h3>区配失败</sh3>')
+	// }
+	//   \d 原子  数字
+	//   \D 原子  非数字
+
+	// var reg = /\w\w\d/
+	// var str = 'houdunwang39'
+	// var r = reg.exec(str)
+	// alert(r)
+
+	//  \w 数字字母下划线
+
+
+	// var reg = /\W/
+	// var str = 'houdunwang%39'
+	// var r = reg.exec(str)
+	// alert(r)
+
+	//  \W  匹配非字母非数字非下划线
+
+	// var reg = /\s\S/
+	// var str = 'hou dunwang '
+	// var r = reg.exec(str)
+	// alert(r)
+
+	//  \s  匹配空白字符
+	//  \S  区配非空白字符
+
+
+	// var reg  = /./
+	// var str = 'houdunsfk.1341%#@ fs'
+	// var r = reg.exec(str)
+	// alert(r)
+
+	// .区配除了回车符以外的所有字符
+
+	// var reg = /军火|发票|AK47/
+	// var str = '专业军火出售 QQ:2345363525'
+	// var r = reg.exec(str)
+	// alert(r)
+
+	//   | 或   可以连接多个匹配项
+
+	// var reg = /[海贼王]怪/
+	// var str = '乌贼怪杀掉了奥特曼'
+	// var r = reg.exec(str)
+	// alert(r)
+
+	// [abcd] 中间包含a或者b或者c或者d
+	// [^ abcd]  不是a 或者不是b 或者不是c
+
+	//[0-9a-bA-Z
+
+	// (hod)\d\d\d\1  \1指的是调用第一个分组
+	// \d{1,6}  区配1到6个数字  代表重复数字范围
+	// \d*  没有或者多个  非洲老婆
+	// \d?  没有或1个  中国老婆
+	// \d+  至少一个  中国房子  
+
+	// var reg = /<p>.*?<\/p>/
+	// var str = '<p>我是第一个p标签</p><p>我是第二个p标签</p>'
+	// var r = reg.exec(str)
+	// alert(r)
+	// 量词+? 禁止贪婪
+	// ^ 和 $ 字符串的开始和结束  定边界
+	// /^1()$/
+
+
+// 生分证
+	var reg = /^[123456789]\d{16}(com|cn|net)$|^[123456789]\d{14}$/
+	var str = '34222419910501093com'
+	var r = reg.exec(str)
+	alert(r)
+
+	//  \b  单词的边界
+
+	// 模式修正符  //i   是不区分大小写
+	// m   将字符串视为多行， 修正^ $
+	// g   全局配 找到所有项
+	// gmi  可以同时用
+
+
+	// str.search(reg) 对字符串区配正则表达式 返回位置下标
+
+	// var reg = /\d/g
+	// var str = '后盾13厚蹲3厚蹲1'
+	// var r = str.replace(reg,'***')
+	// alert(r)
+
+	// str.split
+
+	//匹配网址
+
+	// var reg = //
+
+	// 作业
+	// 1、  58同城 注册效果
+	// 2、  新浪微博 字数统计
+
+
+
+
+
+  var reg = /\w/
+  var str = ' '
+  var r = reg.exec(str)
+  alert(r)
+	
+  
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

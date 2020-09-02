@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>canvas</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+    <canvas id='canvas' width=500 height=500></canvas>
+    <select id="color">
+        <option value="red">红色</option id='red'>
+        <option value="blue">蓝色</option>
+        <option value="yellow">黄色</option>
+        <option value="black">黑色</option>
+    </select>
+
+    <script type="text/javascript">
+    // 抓取画布
+        var canvas = document.getElementById('canvas');
+    // 获得画布属性
+        var draw = canvas.getContext("2d");
+        // 给画布定义线宽
+        draw.lineWidth=12;
+        // 给画布定义颜色为红色
+        // 当画布点击时
+        var bool =false;
+        $('#canvas').mousedown(function(e) {
+            draw.strokeStyle = $('#color').val();
+            var mouseX = e.pageX - this.offsetLeft;
+            var mouseY = e.pageY - this.offsetTop;
+            // 起始位置
+            draw.moveTo(mouseX,mouseY);
+            bool = true;
+        });
+        $('#canvas').mouseup(function(e) {
+            bool = false;
+        });
+        $('#canvas').mousemove(function(e) {
+            var mouseX = e.pageX - this.offsetLeft;
+            var mouseY = e.pageY - this.offsetTop;
+            document.title = mouseX+'--'+mouseY;
+            if(bool){
+                // 终止位置
+                draw.lineTo(mouseX+10,mouseY+10);//终止模板
+                draw.stroke();
+            }
+            });
+
+
+    </script>
+    <style type="text/css">
+
+    #canvas{
+        background: #eee;
+        border:  #000 solid 2px;
+    }
+    #red{
+        background: red;
+        color: red;
+    }
+    </style>
+
+    1.抓canvas必须使用原生js抓法。
+    2.要给canvas定义宽和高，必须写行内。
+    3.误将画点起始位置。moveTo写在mousemove里面，画出虚线错误。
+
+</body>
+</html>

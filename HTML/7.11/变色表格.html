@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>隔行变色表格</title>
+</head>
+<style type="text/css">
+	body,
+	h2 {
+		color: #fff;
+		background: #000;
+	}
+
+	td {
+		width: 100px;
+		height: 30px;
+		text-align: center;
+		background: #444;
+		font-size: 13px;
+	}
+
+	div {
+		font-size: 15px;
+		font-family: Arial, Verdana;
+	}
+</style>
+
+<body style="margin:0 auto;width:1000px;">
+	<h2>隔行变色表格</h2>
+	<h4>1.演示</h4>
+	<table>
+		<script type="text/javascript">
+var cols=prompt('请您输入表格的行数，建议1~11','11')
+var rows=prompt('请您输入表格的列数，建议1~7','7')
+for (var i = 0; i <= cols; i++) {
+	document.write('<tr>')
+	for (var j = 0; j <= rows; j++) {
+		if(i==j&&j==0){
+			document.write('<td style="font-size:20px;background:#fff;color:#000">记事薄</td>')
+		}else if(i==0){
+			document.write('<td style="background:#F92659">星期'+j+'</td>')
+			}else if(j==0){
+				document.write('<td style="background:#12274B">'+2*i+':00</td>')
+				}else if(i%2==0){
+					document.write('<td style="background:#222">'+i+'行'+j+'列</td>') 
+					}else{
+							document.write('<td>'+i+'行'+j+'</td>')
+						}
+	};
+	document.write('</tr>')
+	// document.write('<br />')
+};
+			
+		</script>
+	</table>
+	<div>
+		<h4>2.代码</h4>
+		<xmp style="background:#111; font-family: Arial,Verdana;">
+			<style type="text/css">
+				body,
+				h2 {
+					color: #fff;
+					background: #000;
+				}
+
+				td {
+					width: 100px;
+					height: 30px;
+					text-align: center;
+					background: #444;
+					font-size: 13px;
+				}
+			</style>
+			<table>
+				<script type="text/javascript">
+					var cols = prompt('请您输入表格的行数，建议1~11', '11')
+					var rows = prompt('请您输入表格的列数，建议1~7', '7')
+					for (var i = 0; i <= cols; i++) {
+						document.write('<tr>')
+						for (var j = 0; j <= rows; j++) {
+							if (i == j && j == 0) {
+								document.write('<td style="font-size:20px;background:#fff;color:#000">记事薄</td>')
+							} else if (i == 0) {
+								document.write('<td style="background:#F92659">星期' + j + '</td>')
+							} else if (j == 0) {
+								document.write('<td style="background:#12274B">' + 2 * i + '：00</td>')
+							} else if (i % 2 == 0) {
+								document.write('<td style="background:#222">' + i + '行' + j + '列</td>')
+							} else {
+								document.write('<td>' + i + '行' + j + '</td>')
+							}
+						};
+						document.write('</tr>')
+
+
+					};
+				</script>
+			</table>
+		</xmp>
+
+
+		<!-- /*导入一个外部菜单*/ -->
+		<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+			style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+
+</body>
+
+</html>

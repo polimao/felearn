@@ -1,0 +1,636 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>腾讯网</title>
+
+</head>
+
+<body>
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		body {
+			font: 12px "宋体", "Arial Narrow", HELVETICA;
+			text-decoration: none;
+		}
+
+		/*头*/
+		#header {
+			width: 1000px;
+			height: 48px;
+			margin: 0px auto;
+			padding: 23px 0px 19px;
+			background: #fff;
+		}
+
+		#header .logo h1 {
+			display: block;
+			float: left;
+			width: 134px;
+			height: 44px;
+			margin-left: 195px;
+		}
+
+		#header .search {
+			float: left;
+			width: 423px;
+			height: 42px;
+			padding: 5px 0 0 42px;
+		}
+
+		#header .search .search-left {
+			float: left;
+			width: 291px;
+			height: 35px;
+			border-style: solid none solid solid;
+			border-width: 1px 0 1px 1px;
+			border-color: #d3d3d3;
+		}
+
+		#header .search .search-left div {
+			float: left;
+			color: #a8a8a8;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 35px;
+			text-indent: 10px;
+			background-image: url("qqbg.png");
+		}
+
+		#header .search .search-left .search-input {
+			float: left;
+			width: 175px;
+			height: 25px;
+			padding: 4px;
+			line-height: 22px;
+			font-size: 14px;
+			color: 3333;
+			border: 0 none;
+		}
+
+		#header .search .search-right {
+			float: left;
+		}
+
+		#header .search .search-right a {
+			display: block;
+			float: right;
+			width: 90px;
+			height: 37px;
+			background: #5DA4E6;
+			line-height: 37px;
+			text-indent: 13px;
+			color: #fff;
+			font-weight: bold;
+			font-size: 16px;
+			text-decoration: none;
+		}
+
+		#header .search .search-left ul {
+			list-style: none;
+			display: none;
+		}
+
+		#header .search .search-left ul li {
+			color: #a8a8a8;
+			font-size: 14px;
+			font-weight: bold;
+			/*display: none;*/
+			height: 28px;
+			line-height: 28px;
+			width: 58px;
+			text-indent: 10px;
+		}
+
+		#header .login {
+			float: right;
+			width: 194px;
+			height: 37px;
+			background: url(login.png)no-repeat;
+			margin-top: 5px;
+		}
+
+		#header .login a.a1,
+		.a2,
+		.a3,
+		.a4,
+		.a5 {
+			float: right;
+			display: block;
+			width: 37px;
+			height: 37px;
+			padding-top: 12px;
+			text-indent: 1px;
+		}
+
+		#header .login span {
+			display: none;
+		}
+
+		/*导航*/
+		#main-nav {
+			width: 987px;
+			height: 57px;
+			padding: 8px 5px 0px 8px;
+			line-height: 22px;
+			font-size: 14px;
+			margin: 0 auto;
+			position: relative;
+			z-index: 18;
+			background: url(main-nav.jpg);
+		}
+
+		#main-nav div {
+			float: left;
+			height: 25px;
+			width: 126px;
+			text-align: left;
+			padding: 0px 6px 0px 15px;
+		}
+
+		#main-nav a {
+			display: block;
+			float: left;
+			color: #fff;
+			text-decoration: none;
+			font-size: 14px;
+			line-height: 22px;
+			margin: 0px 4px 0px 3px;
+			font-family: 'Microsoft YaHei', '宋体', 'arial';
+			padding: 3px;
+		}
+
+		#main-nav a:hover {
+			background: #CAE1EE;
+		}
+
+		/*广告1*/
+		#bner1 {
+			width: 1000px;
+			height: 75px;
+			margin: 12px auto 0px;
+		}
+
+		#bner1 div.link {
+			float: right;
+			position: relative;
+			width: 280px;
+			height: 75px;
+			background: url(bner1.png);
+		}
+
+		#bner1 div.link a.link1 {
+			position: absolute;
+			width: 150px;
+			height: 75px;
+		}
+
+		#bner1 div.link a.link2 {
+			position: absolute;
+			width: 130px;
+			height: 75px;
+			left: 150px;
+		}
+
+		/*容器*/
+		#wrapper {
+			width: 1000px;
+			margin: 12px auto 0px;
+			height: 1018px;
+		}
+
+		#layout-left {
+			width: 700px;
+			height: 1018px;
+			float: left;
+		}
+
+		.layout-left-1 {
+			float: left;
+			width: 350px;
+			height: 1018px;
+			background: #98C864;
+		}
+
+		.layout-left-2 {
+			float: left;
+			width: 330px;
+			height: 148px;
+			background: #999
+		}
+
+		.layout-left-3 {
+			float: left;
+			width: 330px;
+			height: 84px;
+			background: thistle
+		}
+
+		.layout-left-4 {
+			float: left;
+			width: 330px;
+			height: 332px;
+			background: #399
+		}
+
+		.layout-left-5 {
+			float: left;
+			width: 330px;
+			height: 193px;
+			background: springgreen
+		}
+
+		.layout-left-6 {
+			float: left;
+			width: 330px;
+			height: 263px;
+			background: thistle
+		}
+
+		#layout-right {
+			width: 280px;
+			height: 1018px;
+			margin-left: 20px;
+			float: left;
+		}
+
+		#layout-right .menu {
+			width: 280px;
+			height: 240px;
+			background: #666
+		}
+
+		#layout-right .hangqing {
+			width: 280px;
+			height: 181px;
+			margin-top: 12px;
+			background: #666
+		}
+
+		#layout-right .img {
+			width: 280px;
+			height: 320px;
+			margin-top: 12px;
+		}
+
+		#layout-right .yunshi {
+			width: 280px;
+			height: 241px;
+			margin-top: 12px;
+			background: #666
+		}
+
+		/*广告2*/
+		#bner2 {
+			width: 1000px;
+			height: 90px;
+			margin: 12px auto 0px;
+		}
+
+		#bner2 .bner2-left {
+			width: 700px;
+			height: 88px;
+			float: left;
+			border: 1px solid #FF4400;
+		}
+
+		#bner2 .bner2-left a {
+			display: block;
+			width: 88px;
+			height: 88px;
+			float: left;
+			background: url(taobao.gif);
+			line-height: 88px;
+		}
+
+		#bner2 .bner2-right {
+			width: 280px;
+			height: 90px;
+			float: right;
+			background: url(bner2-right.jpg)no-repeat;
+		}
+
+		/*正文*/
+		#conlayout {
+			width: 100%;
+			height: 2723px;
+		}
+
+		.conlayout1,
+		.conlayout2,
+		.conlayout3,
+		.conlayout4,
+		.conlayout5,
+		.conlayout6,
+		.conlayout7,
+		.conlayout8 {
+			width: 1000px;
+			height: 304px;
+			margin: 12px auto 0px;
+		}
+
+		.conlayout1 .div12,
+		.conlayout2 .div12,
+		.conlayout3 .div12,
+		.conlayout4 .div12,
+		.conlayout5 .div12 {
+			width: 660px;
+			height: 304px;
+			margin-right: 20px;
+			float: left;
+			background: #F7FAFD;
+		}
+
+		.conlayout1 .div12 .menu,
+		.conlayout2 .div12 .menu,
+		.conlayout3 .div12 .menu,
+		.conlayout4 .div12 .menu,
+		.conlayout5 .div12 .menu {
+			width: 660px;
+			height: 30px;
+			background: #C8DCF2
+		}
+
+		.conlayout1 .div12 .con,
+		.conlayout2 .div12 .con,
+		.conlayout3 .div12 .con,
+		.conlayout4 .div12 .con,
+		.conlayout5 .div12 .con {
+			width: 660px;
+			height: 263px;
+			margin-top: 11px;
+		}
+
+		.conlayout1 .div12 .div1,
+		.conlayout2 .div12 .div1,
+		.conlayout3 .div12 .div1,
+		.conlayout4 .div12 .div1,
+		.conlayout5 .div12 .div1 {
+			width: 320px;
+			height: 263px;
+			float: left;
+			background: #999
+		}
+
+		.conlayout1 .div12 .div2,
+		.conlayout2 .div12 .div2,
+		.conlayout3 .div12 .div2,
+		.conlayout4 .div12 .div2,
+		.conlayout5 .div12 .div2 {
+			width: 320px;
+			height: 263px;
+			float: right;
+			background: #999
+		}
+
+		.conlayout1 .div3,
+		.conlayout2 .div3,
+		.conlayout3 .div3,
+		.conlayout4 .div3,
+		.conlayout5 .div3 {
+			float: right;
+			width: 320px;
+			height: 304px;
+			background: #C8DCF2;
+		}
+
+
+		.conlayout6 div,
+		.conlayout7 div,
+		.conlayout8 div {
+			float: left;
+			width: 320px;
+			height: 304px;
+			margin-right: 20px;
+			background: #C8DCF2;
+		}
+
+		.conlayout6 div.div3,
+		.conlayout7 div.div3,
+		.conlayout8 div.div3 {
+			margin-right: 0px;
+		}
+
+
+		#layout {
+			width: 1000px;
+			height: 209px;
+			margin: 12px auto 0px;
+			background: #777;
+		}
+
+		#visua1 {
+			width: 1000px;
+			height: 185px;
+			margin: 12px auto 0px;
+			background: #888;
+		}
+
+		#bner-last {
+			width: 1000px;
+			height: 90px;
+			margin: 12px auto 0px;
+			background: url(bner-last.jpg)no-repeat;
+		}
+
+		#footer {
+			width: 100%;
+			height: 100px;
+			margin: 12px auto 0px;
+			background: #999;
+		}
+
+		#footer-link {
+			width: 1000px;
+			height: 70px;
+			margin: 12px auto 0px;
+			background: #000;
+		}
+	</style>
+	<!-- 头开始 -->
+	<div id="header">
+		<div class="logo">
+			<h1><a href=""><img src="logo.png" alt=""></a></h1>
+		</div>
+		<div class="search">
+			<div class="search-left">
+				<div>网页&nbsp;</div>
+				<ul>
+					<li>网页</li>
+					<li>图片</li>
+					<li>视频</li>
+					<li>音乐</li>
+					<li>地图</li>
+					<li>问问</li>
+					<li>百科</li>
+					<li>新闻</li>
+					<li>购物</li>
+				</ul>
+				<input type="text" class="search-input">
+			</div>
+			<div class="search-right"><a href="">搜狗搜索</a></div>
+		</div>
+		<div class="login">
+			<a href="" class="a1"><span>登陆</span></a>
+			<a href="" class="a2"><span>登陆</span></a>
+			<a href="" class="a3"><span>登陆</span></a>
+			<a href="" class="a4"><span>登陆</span></a>
+			<a href="" class="a5"><span>登陆</span></a>
+
+		</div>
+	</div>
+	<!-- 头结束 -->
+	<!-- 导航开始 -->
+	<div id="main-nav">
+		<div><a href=""><b>新闻</b></a><a href="">图片</a><a href="">军事</a></div>
+		<div style="width:136px;padding:0 1px 0 10px"><a href=""><b>视频</b></a><a href="">热剧</a><a href="">综艺</a></div>
+		<div><a href=""><b>娱乐</b></a><a href="">明星</a><a href="">电影</a></div>
+		<div><a href=""><b>新闻</b></a><a href="">图片</a><a href="">军事</a></div>
+		<div><a href=""><b>视频</b></a><a href="">热剧</a><a href="">综艺</a></div>
+		<div style="padding:0 6px 0 10px;"><a href="">娱乐</a><a href="">明星</a><a href="">电影</a></div>
+		<div style="width:84px;padding:0 6px 0 10px;"><a href=""><b>新闻</b></a><a href="">图片</a></div>
+		<div><a href=""><b>视频</b></a><a href="">热剧</a><a href="">综艺</a></div>
+		<div style="width:136px;padding:0 1px 0 10px"><a href=""><b>娱乐</b></a><a href="">明星</a><a href="">电影</a></div>
+		<div><a href=""><b>新闻</b></a><a href="">图片</a><a href="">军事</a></div>
+		<div><a href=""><b>视频</b></a><a href="">热剧</a><a href="">综艺</a></div>
+		<div><a href=""><b>娱乐</b></a><a href="">明星</a><a href="">电影</a></div>
+		<div style="padding:0 6px 0 10px;"><a href=""><b>新闻</b></a><a href="">图片</a><a href="">军事</a></div>
+		<div style="width:100px;padding:0 0 0 10px;"><a href=""><b>新闻</b></a><a href="">图片</a></div>
+	</div>
+	<!-- 导航结束 -->
+	<!-- 广告1开始 -->
+	<div id="bner1">
+		<object style="outline:none;width:700px;height:75px;" data="bner.swf"></object>
+		<div class="link">
+			<a href="" class="link1"></a>
+			<a href="" class="link2"></a>
+		</div>
+	</div>
+	<!-- 广告1结束 -->
+	<!-- 容器开始 -->
+	<div id="wrapper">
+		<div id="layout-left">
+			<div class="layout-left-1">
+				<div class="news"></div>
+				<div class="cons"></div>
+				<div class="diaocha"></div>
+			</div>
+			<div class="layout-left-2"></div>
+			<div class="layout-left-3"></div>
+			<div class="layout-left-4"></div>
+			<div class="layout-left-5"></div>
+			<div class="layout-left-6"></div>
+		</div>
+		<div id="layout-right">
+			<div class="menu"></div>
+			<div class="img"><img src="layout-right-img.jpg" alt=""></div>
+			<div class="hangqing"></div>
+			<div class="yunshi"></div>
+		</div>
+	</div>
+	<!-- 容器结束 -->
+	<!-- 广告2开始 -->
+	<div id="bner2">
+		<div class="bner2-left"><a href="">&nbsp;</a></div>
+		<div class="bner2-right"></div>
+	</div>
+	<!-- 广告2结束 -->
+	<!-- 正文开始 -->
+	<div id="conlayout">
+		<div class="conlayout1">
+			<div class="div12">
+				<div class="menu"></div>
+				<div class="con">
+					<div class="div1"></div>
+					<div class="div2"></div>
+				</div>
+			</div>
+			<div class="div3"></div>
+		</div>
+		<div class="conlayout2">
+			<div class="div12">
+				<div class="menu"></div>
+				<div class="con">
+					<div class="div1"></div>
+					<div class="div2"></div>
+				</div>
+			</div>
+			<div class="div3"></div>
+		</div>
+
+		<div id="bner2">
+			<div class="bner2-right">
+			</div>
+		</div>
+
+		<div class="conlayout3">
+			<div class="div12">
+				<div class="menu"></div>
+				<div class="con">
+					<div class="div1"></div>
+					<div class="div2"></div>
+				</div>
+			</div>
+			<div class="div3"></div>
+		</div>
+		<div class="conlayout4">
+			<div class="div12">
+				<div class="menu"></div>
+				<div class="con">
+					<div class="div1"></div>
+					<div class="div2"></div>
+				</div>
+			</div>
+			<div class="div3"></div>
+		</div>
+
+		<div id="bner2">
+			<div class="bner2-right"></div>
+		</div>
+
+		<div class="conlayout5">
+			<div class="div12">
+				<div class="menu"></div>
+				<div class="con">
+					<div class="div1"></div>
+					<div class="div2"></div>
+				</div>
+			</div>
+			<div class="div3"></div>
+		</div>
+		<div class="conlayout6">
+			<div></div>
+			<div></div>
+			<div class="div3"></div>
+		</div>
+		<div class="conlayout7">
+			<div></div>
+			<div></div>
+			<div class="div3"></div>
+		</div>
+		<div class="conlayout8">
+			<div></div>
+			<div></div>
+			<div class="div3"></div>
+		</div>
+	</div>
+	<div id="layout"></div>
+	<div id="visua1"></div>
+	<div id="bner-last"></div>
+	<div id="footer"></div>
+	<div id="footer-link"></div>
+
+
+	<!-- /*导入一个外部菜单*/ -->
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+
+
+</body>
+
+</html>

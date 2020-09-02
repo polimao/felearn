@@ -1,0 +1,41 @@
+
+<script type="text/javascript">
+
+
+// 查找str中所有str1的位置。 我这里替换成* 有疑问
+var str = 'abcdefcc';
+var str1 = 'c';
+var num=[];
+
+while(str.match(str1)){
+	var adr = str.indexOf(str1);
+	num.push(adr);
+	var arr=str.split('')
+	delete arr[adr]
+	document.write(arr+'<br>')
+	str = arr.join('')
+	document.write(str+'<br>')
+
+	// str = str.replace(str[adr],'*')
+}
+alert(num)
+alert(str)
+
+// function fond(str1,str2,arr){
+// 	while(str1.match(str2)){
+// 		var adr = str1.indexOf(str2)
+// 		var arr = []
+// 		arr.push(adr)
+// 		str1 = str1.replace(str1[adr],'')
+// 	}
+// 	alert(str1)
+// 	return arr
+// }
+// var s1 = 'abcdefcc';
+// var s2 = 'c';
+
+// alert(fond(s1,s2))
+
+
+</script>
+

@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>钢琴1</title>
+	<!-- <script type="text/javascript" src='../other/jquery-1.7.2.min.js'></script> -->
+</head>
+
+<body>
+	<!-- 
+初级
+	1、123456789分别代表do ra mi fa so la xi do ra
+	2、asdfghjkl也可以这么代表
+	3、ui上是7个不同颜色的柱型div
+	4、从音调高低给div加以不同的高度
+	5、敲击某一个音调则对应的div高度从0加到最高
+中级
+	6、左侧设置时间戳 一条竖线
+	7、所有div隐藏待命
+	8、被敲击的div将出现在时间戳右边，做出移动到时间戳左边的动画
+	9、每一个新敲击的div都将做一次移动动画，一直追加到时间戳左边。
+	10、两边渐隐效果
+高级
+	11、玩家根据乐谱可以敲出好听的调调
+	12、在页面上为玩家准备好可用的常见音乐谱对应的键盘号敲打方式
+开挂
+	13、在页面上设置个上帝模式
+	14、在这个模式下将乐谱的对应的调调存入数组中
+	15、每次敲击的顺序键盘比如1~9 将对应数组的下标
+	16、循环完毕整个数组，便是一首完整的调调
+	 -->
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#wrap {
+			width: 1000px;
+			height: 600px;
+			background: #f5f5f5;
+			margin: 0 auto;
+			margin-top: 20px;
+			position: relative;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		li#m1 {
+			width: 100px;
+			height: 100px;
+			margin: 0 5px;
+			background: #C0EBF7;
+			float: left;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+
+		li#m2 {
+			width: 100px;
+			height: 160px;
+			margin: 0 5px;
+			background: #B9D329;
+			float: left;
+			position: absolute;
+			left: 110px;
+			bottom: 0;
+		}
+
+		li#m3 {
+			width: 100px;
+			height: 220px;
+			margin: 0 5px;
+			background: #69BCF3;
+			float: left;
+			position: absolute;
+			left: 220px;
+			bottom: 0;
+		}
+
+		li#m4 {
+			width: 100px;
+			height: 280px;
+			margin: 0 5px;
+			background: #79D9F3;
+			float: left;
+			position: absolute;
+			left: 330px;
+			bottom: 0;
+		}
+
+		li#m5 {
+			width: 100px;
+			height: 340px;
+			margin: 0 5px;
+			background: #FFAE5B;
+			float: left;
+			position: absolute;
+			left: 440px;
+			bottom: 0;
+		}
+
+		li#m6 {
+			width: 100px;
+			height: 400px;
+			margin: 0 5px;
+			background: #ACD180;
+			float: left;
+			position: absolute;
+			left: 550px;
+			bottom: 0;
+		}
+
+		li#m7 {
+			width: 100px;
+			height: 460px;
+			margin: 0 5px;
+			background: #FAB4CC;
+			float: left;
+			position: absolute;
+			left: 660px;
+			bottom: 0;
+		}
+
+		li#m8 {
+			width: 100px;
+			height: 520px;
+			margin: 0 5px;
+			background: #66CCFF;
+			float: left;
+			position: absolute;
+			left: 770px;
+			bottom: 0;
+		}
+
+		li#m9 {
+			width: 100px;
+			height: 580px;
+			margin: 0 5px;
+			background: #a10;
+			float: left;
+			position: absolute;
+			left: 880px;
+			bottom: 0;
+		}
+
+		#yinyue {
+			display: none;
+		}
+	</style>
+
+	<!-- 这是用闭包做的 -->
+	<!-- <script type="text/javascript">
+		window.onload = function(){
+
+			var lis = document.getElementsByTagName('li')
+
+			for (var i = 0; i < lis.length; i++) {
+				(function(a){
+					lis[a].onmouseover = function(){
+						// alert(a)
+						lis[a].style.height = (100+60*a)+'px'
+					}
+					lis[a].onmouseout = function(){
+						lis[a].style.height = 50+'px'
+					}
+				})(i)
+
+			};
+		}
+
+</script>
+ -->
+
+	<script type="text/javascript">
+	window.onload = function(){
+
+		var arr_xxx = [1,1,5,5,6,6,5,4,4,3,3,2,2,1,5,5,4,4,3,3,2,5,5,4,4,3,3,2,1,1,5,5,6,6,5,4,4,3,3,2,2,1]//小星星
+		var arr_tn = [5,4,3,3,4,3,3,4,3,4,3,2,1,1,3,5,6,6,6,5,2,2,4,3,1,3,5,6,6,6,7,6,5,4,3,4,3,2,1]//童年
+		var arr_qhc = [5,4,2,4,4,2,4,4,2,4,2,1,5,4,2,4,4,2,4,4,6,5,4,4,1,2,6,6,6,5,6,6,5,6,8,6,6,6,6,5,5,5,5,5,4,6,5,5,4,2,4,4,2,4,4,2,4,2,1,1,2,6,8,8,6,8,8,6,5,4,4,4,5,6,8,9,8,6,8,6,6,5,5,1,6,5,5,4,8,8,6,5,6,2,5,6,8,6,5,8,8,6,5,6,1,5,6,8,5,4,4,5,6,8,9,8,6,8,6,6,5,5,4,5,4,5,4,5,6,8,6,8,8,6,5,6,2,5,6,8,6,5,8,8,6,5,6,1,5,6,8,5,4,4,5,6,8,9,8,6,8,6,6,5,5,1,6,5,5,4] //青花瓷
+		var a = 0,b = 0,c = 0;
+
+		for (var i = 1; i < 10; i++) {
+				window.onkeydown = function(e){
+					var e = e || window.event
+					var anjian = String.fromCharCode(e.keyCode)
+					var m1 = document.getElementById('m1')
+
+					if(anjian=='A'){
+						anjian=arr_xxx[a]
+						a++
+					}
+					if(anjian=='B'){
+						anjian=arr_tn[b]
+						b++
+					}
+					if(anjian=='C'){
+						anjian=arr_qhc[c]
+						c++
+					}
+
+					var chuan ='m'+anjian
+							document.getElementById(chuan).style.height = (100+(anjian-1)*60)+'px';
+
+					var yinyue = document.getElementById('yinyue');
+					// var oga = m.getElementsByTagName('source')[0];
+					var as = yinyue.getElementsByTagName('audio');//抓audio标签
+					as[anjian*1-1].currentTime=0;
+					as[anjian*1-1].play();
+				}
+		};
+		window.onkeyup = function(e){
+			var e = e || window.event
+			var anjian = String.fromCharCode(e.keyCode)
+			for (var i = 1; i < 10; i++) {
+					var chuan = 'm'+i
+					document.getElementById(chuan).style.height = 5 +'px'	
+			}
+		}
+	}
+	</script>
+	<div id="wrap">
+		<ul>
+			<li id="m1"></li>
+			<li id="m2"></li>
+			<li id="m3"></li>
+			<li id="m4"></li>
+			<li id="m5"></li>
+			<li id="m6"></li>
+			<li id="m7"></li>
+			<li id="m8"></li>
+			<li id="m9"></li>
+		</ul>
+	</div>
+
+	<div id="yinyue">
+		<audio controls="controls">
+			<source src="music/1.oga" type="audio/ogg" />
+		</audio>
+
+		<audio controls="controls">
+			<source src="music/2.oga" type="audio/ogg" />
+		</audio>
+
+		<audio controls="controls">
+			<source src="music/3.oga" type="audio/ogg" />
+		</audio>
+
+		<audio controls="controls">
+			<source src="music/4.oga" type="audio/ogg" />
+		</audio>
+
+		<audio controls="controls">
+			<source src="music/5.oga" type="audio/ogg" />
+		</audio>
+
+
+		<audio controls="controls">
+			<source src="music/6.oga" type="audio/ogg" />
+		</audio>
+
+		<audio controls="controls">
+			<source src="music/7.oga" type="audio/ogg" />
+		</audio>
+
+		<audio controls="controls">
+			<source src="music/8.oga" type="audio/ogg" />
+		</audio>
+
+		<audio controls="controls">
+			<source src="music/9.oga" type="audio/ogg" />
+		</audio>
+	</div>
+
+	<div style='position:absolute;left:10px;top:30px;'>
+		<a href="">
+			<xmp>
+
+				A小星星乐谱
+				1 1 5 5 6 6 5
+				4 4 3 3 2 2 1
+				5 5 4 4 3 3 2
+				5 5 4 4 3 3 2
+				1 1 5 5 6 6 5 x
+				4 4 3 3 2 2 1
+
+
+				B童年乐谱
+				5 4 3
+				3 4 3
+				3 4 3 4 3 2 1
+				1 3 5 6
+				6 6 5 2 2 4 3
+				1 3 5 6
+				6 6 7 6 5 4 3 4 3 2 1
+
+			</xmp>
+		</a>
+	</div>
+
+
+
+
+	<!-- /*导入一个外部菜单*/ -->
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+
+
+</body>
+
+</html>

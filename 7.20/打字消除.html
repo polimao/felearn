@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul {
+			list-style: none;
+		}
+
+		li {
+			font-size: 190px;
+			float: left;
+			font-family: 微软雅黑;
+		}
+	</style>
+</head>
+
+<body>
+	<ul>
+		<li>A</li>
+		<li>A</li>
+		<li>A</li>
+		<li>A</li>
+		<li>A</li>
+		<li>A</li>
+		<li>A</li>
+		<li>A</li>
+		<li>A</li>
+		<li>A</li>
+	</ul>
+	<script type="text/javascript">
+	window.onload = function(){
+		window.onkeydown = function(e){
+			var e = e||window.event
+
+			var anxia = String.fromCharCode(e.keyCode)
+			var li = document.getElementsByTagName('li')
+			var ul = document.getElementsByTagName('ul')
+			for (var i = 0; i < li.length; i++) {
+				if(li[i].innerHTML == anxia){
+					ul[0].removeChild(li[i])
+					var str = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+					var add_li = document.createElement('li')
+					ul[0].appendChild(add_li)
+					var num = Math.floor(Math.random()*str.length)
+					add_li.innerHTML = str[num]
+				}
+			}
+		}
+	}
+	</script>
+
+
+
+
+	<!-- /*导入一个外部菜单*/ -->
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title></title>
+</head>
+
+<body style="margin:0 auto;width:1000px;">
+	<h2>字符串重复位置</h2>
+
+	<p>
+		-----题<br>
+		查找字符串“后盾视频下载地址:bbs.houdunwang.com，论坛地址：bbs.houdunwang.com,官方网址：www.houdunwang.com”<br>将所有”houdunwang”出现的位置，打印出来
+	</p>
+	<h4>1、演示</h4>
+
+	<script type="text/javascript">
+
+	var str1 = '后盾视频下载地址:bbs.houdunwang.com，论坛地址：bbs.houdunwang.com,官方网址：www.houdunwang.com';
+	var str2 = 'houdunwang';
+
+	function print(str1,str2){
+		var re = [];
+		var i =0
+		while(str1.match(str2)){
+			var adr = str1.indexOf(str2);
+			re.push(adr);
+			str1 = str1.replace(str1[adr],'$');
+			i = i+1
+			document.write('第'+i+'次适配得到位置：'+re+'<br>'+str1+'<br><br>');
+		}
+		return re;
+	}
+
+	var result = print(str1,str2)
+	document.write('最终输出结果：'+result)
+	
+	</script>
+
+	<h4>2、代码</h4>
+	<xmp style="background:#eee">
+		<script type="text/javascript">
+
+			var str1 = '后盾视频下载地址:bbs.houdunwang.com，论坛地址：bbs.houdunwang.com,官方网址：www.houdunwang.com';
+			var str2 = 'houdunwang';
+
+			function print(str1, str2) {
+				var re = [];
+				var i = 0
+				while (str1.match(str2)) {
+					var adr = str1.indexOf(str2);
+					re.push(adr);
+					str1 = str1.replace(str1[adr], '$');
+					i = i + 1
+					document.write('第' + i + '次适配得到位置：' + re + '<br>' + str1 + '<br><br>');
+				}
+				return re;
+			}
+
+			var result = print(str1, str2)
+			document.write('最终输出结果：' + result)
+
+		</script>
+	</xmp>
+
+
+
+
+
+
+	<!-- /*导入一个外部菜单*/ -->
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+</body>
+
+</html>

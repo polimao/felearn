@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- client 可视区域
+screen 屏幕 -->
+<div style="width:100px;height:100px;background:#333;" id="div">1</div>
+ <script type="text/javascript">
+ 	
+ 	var a = document.documentElement.clientWidth;
+ 	var b = document.documentElement.clientHeight;
+ 	document.write(a+'----'+b+'<br>')
+
+ 	var c = window.screen.width;
+ 	var d = window.screen.height;
+ 	document.write(c+'----'+d+'<br>')
+
+ 	// var e = setInterval(函数名,1000);
+ 	// var f = setTimeout(函数名,5000);
+ 	// clearTimeout()
+
+ 	// alert() confirm() prompt() close()
+
+ 	// window.open(url,name,features,replace)
+
+ 	var g = getElementById('div')
+ 	if (g.onclick){
+ 		g.style.margin-left = '100px'
+ 	}
+
+
+
+
+
+ </script>
+
+
+
+
+
+
+</body>
+</html>

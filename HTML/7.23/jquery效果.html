@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>js效果</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			width: 1000px;
+			margin: 0 auto;
+		}
+
+		div {
+			width: 200px;
+			height: 240px;
+			float: left;
+			background: #fff;
+			margin-top: 10px;
+		}
+
+		img {
+			width: 200px;
+		}
+
+		input {
+			width: 200px;
+			height: 30px;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+	<script type="text/javascript">
+$(function(){
+	$('#hide').click(function(){
+		$('.pic').eq(0).hide(4000,function(){$('#hide').value='隐藏'})//这里怎么不起作用？？？
+	})
+	$('#show').click(function(){
+		$('.pic').eq(1).show(4000,function(){alert('展开')})
+	})
+	$('#toggle').click(function(){
+		$('.pic').eq(2).toggle(4000,function(){alert('触发器')})
+	})
+	$('#slideDown').click(function(){
+		$('.pic').eq(3).slideDown(4000,function(){alert('滑动展开')})
+	})
+	$('#slideUp').click(function(){
+		$('.pic').eq(4).slideUp(4000,function(){alert('滑动隐藏')})
+	})
+	$('#slideToggle').click(function(){
+		$('.pic').eq(5).slideToggle(4000,function(){alert('滑动触发器')})
+	})
+	$('#fadeIn').click(function(){
+		$('.pic').eq(6).fadeIn(4000,function(){alert('淡入')})
+	})
+	$('#fadeOut').click(function(){
+		$('.pic').eq(7).fadeOut(4000,function(){alert('淡出')})
+	})
+	$('#fadeTo').click(function(){
+		$('.pic').eq(8).fadeTo(4000,0.2,function(){alert('指定透明度')})
+	})
+	$('#fadeToggle').click(function(){
+		$('.pic').eq(9).fadeToggle(4000,function(){alert('透明度触发器')})
+	})
+	$('#animate').click(function(){
+		$('.pic').eq(10).animate({width:'100px',marginLeft:'50px',marginTop:'50px'},4000,function(){alert('自定义动画')})
+	})
+	$('#stop').click(function(){
+		$('.pic').stop(function(){alert('停止一切效果')})
+	})
+	$('#delay').click(function(){
+		$('.pic').eq(12).delay(1000).hide(4000)
+	})
+})
+
+
+	</script>
+
+	<div>
+		<input type="button" id="hide" value="hide">
+		<img src="i/pvw0.jpg" alt="" class="pic"></div>
+	<div>
+		<input type="button" id="show" value="show">
+		<img src="i/pvw1.jpg" alt="" class="pic" style="display:none;"></div>
+	<div>
+		<input type="button" id="toggle" value="toggle">
+		<img src="i/pvw2.jpg" alt="" class="pic"></div>
+	<div>
+		<input type="button" id="slideDown" value="slideDown">
+		<img src="i/pvw3.jpg" alt="" class="pic" style="display:none;"></div>
+	<div>
+		<input type="button" id="slideUp" value="slideUp">
+		<img src="i/pvw3.jpg" alt="" class="pic"></div>
+	<div>
+		<input type="button" id="slideToggle" value="slideToggle">
+		<img src="i/pvw0.jpg" alt="" class="pic"></div>
+	<div>
+		<input type="button" id="fadeIn" value="fadeIn">
+		<img src="i/pvw1.jpg" alt="" class="pic" style="display:none;"></div>
+	<div>
+		<input type="button" id="fadeOut" value="fadeOut">
+		<img src="i/pvw2.jpg" alt="" class="pic"></div>
+	<div>
+		<input type="button" id="fadeTo" value="fadeTo">
+		<img src="i/pvw3.jpg" alt="" class="pic"></div>
+	<div>
+		<input type="button" id="fadeToggle" value="fadeToggle">
+		<img src="i/pvw3.jpg" alt="" class="pic"></div>
+	<div>
+		<input type="button" id="animate" value="animate">
+		<img src="i/pvw0.jpg" alt="" class="pic"></div>
+	<div>
+		<input type="button" id="stop" value="stop">
+		<img src="i/pvw1.jpg" alt="" class="pic" style="display:none;"></div>
+	<div>
+		<input type="button" id="delay" value="delay">
+		<img src="i/pvw2.jpg" alt="" class="pic"></div>
+
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>轮播图</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		div {
+			width: 330px;
+			height: 240px;
+			margin: 0 auto;
+			margin-top: 130px;
+			position: relative;
+		}
+
+		img {
+			position: absolute;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0 auto;
+			width: 400px;
+		}
+
+		li {
+			width: 20px;
+			height: 20px;
+			float: left;
+			margin-left: 30px;
+			border-radius: 5px;
+			border: 1px solid #a10;
+			background: #999
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<img src="i/1.gif" alt="">
+		<img src="i/2.gif" alt="">
+		<img src="i/3.gif" alt="">
+		<img src="i/4.gif" alt="">
+		<img src="i/5.gif" alt="">
+		<img src="i/6.gif" alt="">
+		<img src="i/7.gif" alt="">
+
+	</div>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script type="text/javascript">
+	window.onload = function(){
+		var c = 0
+		var imgs = document.getElementsByTagName('img')
+		var lis = document.getElementsByTagName('li')
+		function run(){
+			
+			for (var i = 0; i < imgs.length; i++) {
+				if(i==c){
+					imgs[i].style.display = 'block'
+					lis[i].style.background = '#a10'
+				}else{
+					imgs[i].style.display = 'none'
+					lis[i].style.background = '#999'
+				}
+			};
+			c++
+			c==imgs.length?c=0:c;
+		}
+		var timer = setInterval(run,1000)
+
+		for (var j = 0; j < lis.length; j++) {
+			lis[j].onmouseover = function(){
+				clearInterval(timer)
+				for (var k = 0; k < lis.length; k++) {
+					if(this==lis[k]){
+						c=k
+						imgs[k].style.display = 'block'
+						lis[k].style.background = '#a10'
+					}else{
+						imgs[k].style.display = 'none'
+						lis[k].style.background = '#999'
+					}
+				};
+			}
+			lis[j].onmouseout = function(){
+				timer = setInterval(run,1000)
+			};
+		}
+	}
+
+
+	</script>
+
+	<!-- /*导入一个外部菜单*/ -->
+	<iframe src="../menu.html" frameborder="0" scrolling="no" allowtransparency="true"
+		style="position: fixed;left:0px;top: 0px;width:185px;height:100%;"></iframe>
+</body>
+
+</html>

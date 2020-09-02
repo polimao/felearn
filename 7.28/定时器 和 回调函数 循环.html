@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='jquery-1.7.2.min.js'></script>
+</head>
+<body>
+	<script type="text/javascript">
+
+	$(function(){
+
+		//////////////////////////////////////////////////////
+		// var num = 300
+		// function run(){
+		// 	$('div').animate({'margin-left':num}, 1000,function(){
+		// 	$(this).animate({'margin-top':num}, 1000,function(){
+		// 		$(this).animate({'margin-left':num-num}, 1000,function(){
+		// 			$(this).animate({'margin-top':num-num}, 1000)
+		// 		})
+		// 	})
+		// })
+
+		// }
+		// var timer = setInterval(function(){
+		// 	run()
+		// },4000)
+		// run()
+		//////////////////////////////////////////////////////
+
+
+		//////////////////////////////////////////////////////
+
+		var num = 300
+		function run(){
+			$('div').animate({'margin-left':num}, 1,function(){
+			$(this).animate({'margin-top':num}, 1,function(){
+				$(this).animate({'margin-left':num-num}, 1,function(){
+					$(this).animate({'margin-top':num-num}, 1,function(){
+						run()
+					})
+				})
+			})
+		})
+
+		} 
+run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();run();
+
+
+})
+
+
+	</script>
+
+
+	<div style='width:200px;height:200px;background:#333'></div>
+	
+
+
+
+</body>
+</html>
